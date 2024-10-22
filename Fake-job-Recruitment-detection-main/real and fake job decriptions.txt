@@ -1,0 +1,132 @@
+Here are some **real** and **fake** job descriptions that you can use for testing your fake job detection system. You can include these as inputs in your website for classification.
+
+### **Real Job Descriptions:**
+
+1. **Software Developer**  
+   **Job Title**: Software Developer  
+   **Company**: ABC Technologies  
+   **Location**: New York, NY  
+   **Job Description**:  
+   ABC Technologies is looking for a skilled software developer to join our dynamic team. You will be responsible for building and maintaining scalable web applications using modern technologies. The ideal candidate will have 3+ years of experience in software development, proficiency in JavaScript, Python, and frameworks such as React or Django.
+   
+   **Responsibilities**:  
+   - Develop and maintain web applications  
+   - Collaborate with cross-functional teams  
+   - Write clean, scalable code  
+   - Troubleshoot and debug issues  
+
+   **Requirements**:  
+   - Bachelor’s degree in Computer Science or related field  
+   - Experience with JavaScript, Python, and SQL  
+   - Strong problem-solving skills  
+   - Excellent communication skills  
+
+---
+
+2. **Marketing Specialist**  
+   **Job Title**: Marketing Specialist  
+   **Company**: XYZ Media  
+   **Location**: San Francisco, CA  
+   **Job Description**:  
+   XYZ Media is looking for a Marketing Specialist to help strategize, plan, and execute marketing campaigns. You will be working closely with the sales and product teams to align marketing strategies with business goals. Experience in digital marketing and SEO is a must.
+
+   **Responsibilities**:  
+   - Plan and execute digital marketing campaigns  
+   - Track performance and metrics for campaigns  
+   - Collaborate with design teams to create marketing materials  
+   - Analyze competitor strategies  
+
+   **Requirements**:  
+   - Bachelor’s degree in Marketing or related field  
+   - Experience in Google Analytics, SEO, and content marketing  
+   - Strong written and verbal communication skills  
+   - Ability to work in a fast-paced environment  
+
+---
+
+3. **Data Analyst**  
+   **Job Title**: Data Analyst  
+   **Company**: DataInsights Inc.  
+   **Location**: Remote  
+   **Job Description**:  
+   DataInsights is looking for a Data Analyst to join our remote team. You will work on analyzing complex datasets to provide actionable insights for our clients. Strong SQL skills and experience with BI tools such as Tableau or Power BI are essential for this role.
+
+   **Responsibilities**:  
+   - Analyze large datasets to uncover trends  
+   - Prepare reports and dashboards using BI tools  
+   - Work closely with business teams to support data-driven decisions  
+   - Ensure data quality and accuracy  
+
+   **Requirements**:  
+   - Proficiency in SQL and BI tools  
+   - Bachelor’s degree in Data Science, Statistics, or related field  
+   - Ability to present data insights clearly  
+   - Experience with statistical analysis  
+
+---
+
+### **Fake Job Descriptions:**
+
+1. **Data Entry Clerk (Work From Home)**  
+   **Job Title**: Data Entry Clerk (Work From Home)  
+   **Company**: ABC Global Solutions  
+   **Location**: Remote  
+   **Job Description**:  
+   ABC Global Solutions is looking for motivated individuals to work from home as data entry clerks. No prior experience is needed! Simply fill out forms and get paid up to $1000 per day! We offer flexible hours and the ability to work from anywhere.
+
+   **Responsibilities**:  
+   - Enter simple data into online forms  
+   - Work as much or as little as you like  
+   - Earn money fast with no qualifications required  
+
+   **Requirements**:  
+   - Internet connection  
+   - Basic typing skills  
+   - No experience necessary  
+
+   *Warning Signs*: The offer of high pay with little effort or qualifications is a common sign of a scam.
+
+---
+
+2. **Customer Service Representative (Immediate Start)**  
+   **Job Title**: Customer Service Representative  
+   **Company**: XYZ International  
+   **Location**: Remote  
+   **Job Description**:  
+   XYZ International is urgently hiring customer service representatives to work from home. No previous experience is required, and you can start immediately! We offer $1500 per week for part-time hours. No interviews, just sign up today and start earning!
+
+   **Responsibilities**:  
+   - Answer customer inquiries through email  
+   - Work flexible hours  
+   - Earn guaranteed income  
+
+   **Requirements**:  
+   - Must be over 18  
+   - Own a computer or smartphone  
+
+   *Warning Signs*: High pay for little work, no qualifications, and immediate start without interviews are red flags for a fake job.
+
+---
+
+3. **Online Personal Assistant**  
+   **Job Title**: Online Personal Assistant  
+   **Company**: Confidential  
+   **Location**: Remote  
+   **Job Description**:  
+   Seeking an organized personal assistant to handle daily tasks remotely. You can work on your own schedule and earn up to $2000 per week. This is a simple job involving data entry, scheduling, and shopping online for clients. We will send you checks to cover purchases, and you can keep a percentage of the total.
+
+   **Responsibilities**:  
+   - Online shopping for clients  
+   - Scheduling meetings  
+   - Basic data entry  
+
+   **Requirements**:  
+   - Must be detail-oriented  
+   - Have internet access  
+   - Trustworthy  
+
+   *Warning Signs*: Offers of sending money or checks before work starts is a common tactic used in fake job scams.
+
+---
+
+You can place these descriptions in your website for testing, where users can input job descriptions to see if your model classifies them as **real** or **fake**.

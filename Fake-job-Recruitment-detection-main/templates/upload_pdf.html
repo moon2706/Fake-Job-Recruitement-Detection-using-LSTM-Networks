@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        /* Container Styles */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+
+        /* Header Styles */
+        h1 {
+            font-weight: 600;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        /* Animated line under heading */
+        h1::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: #6c63ff;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            animation: slideIn 1s ease forwards;
+        }
+
+        /* Form styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Hidden file input */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Label for file input with styling */
+        label {
+            background-color: #6c63ff;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effects on label */
+        label:hover {
+            background-color: #574bd8;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* Display file name */
+        .file-name {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Stylish submit button */
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effects on submit button */
+        button:hover {
+            background-color: #218838;
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Keyframes for smooth slide-in animation */
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Floating decorative elements */
+        .decoration-circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            animation: floatCircle 6s ease-in-out infinite;
+            top: -100px;
+            right: -50px;
+        }
+
+        .small-circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(40, 167, 69, 0.1);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -30px;
+            animation: floatCircle 6s ease-in-out infinite;
+            animation-delay: 1.5s;
+        }
+
+        /* Float effect */
+        @keyframes floatCircle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Upload PDF</h1>
+        <form action="{{ url_for('upload_pdf') }}" method="post" enctype="multipart/form-data">
+            <label for="file-upload">Choose a PDF</label>
+            <input type="file" name="file" id="file-upload" required onchange="displayFileName()">
+            <span class="file-name" id="file-name">No file chosen</span>
+            <button type="submit">Upload</button>
+        </form>
+        <!-- Floating circles for decoration -->
+        <div class="decoration-circle"></div>
+        <div class="small-circle"></div>
+    </div>
+
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('file-upload');
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : "No file chosen";
+            document.getElementById('file-name').textContent = fileName;
+        }
+    </script>
+
+</body>
+</html>

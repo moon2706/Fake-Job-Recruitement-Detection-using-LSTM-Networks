@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Classification Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle at top, #f093fb, #f5576c);
+            overflow: hidden;
+        }
+
+        /* Container for the result */
+        .container {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 600px; /* Wider box */
+            position: relative;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        /* Animated heading */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Badge style for prediction result */
+        .badge {
+            display: inline-block;
+            padding: 25px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s ease;
+            margin-bottom: 30px;
+        }
+
+        .badge-real {
+            background-color: #28a745;
+            color: white;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5);
+        }
+
+        .badge-fake {
+            background-color: #dc3545;
+            color: white;
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.5);
+        }
+
+        /* Hover effect on result */
+        .badge:hover {
+            transform: scale(1.1);
+        }
+
+        /* Button back to home */
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #fff;
+            color: #333;
+            border: 2px solid #333;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Animation for container fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Floating bubbles in the background for dynamic look */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 5s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            bottom: 20%;
+            left: 15%;
+            animation-duration: 8s;
+        }
+
+        .bubble:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            right: 10%;
+            animation-duration: 6s;
+        }
+
+        .bubble:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            right: 25%;
+            animation-duration: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Job Classification Result</h1>
+        
+        <!-- Dynamic badge that changes color based on prediction -->
+        {% if result == 'REAL' %}
+        <span class="badge badge-real">Real</span>
+        {% else %}
+        <span class="badge badge-fake">Fake</span>
+        {% endif %}
+        
+        <a href="{{ url_for('home') }}">Go Back to Home</a>
+    </div>
+
+    <!-- Floating decorative bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+</body>
+</html>

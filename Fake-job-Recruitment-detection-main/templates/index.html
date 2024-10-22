@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Job Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        /* Background with animated gradient */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container with a distinct color */
+        .container {
+            background: #ffffff; /* Solid white background */
+            border: 2px solid #84fab0; /* Soft border matching the background gradient */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 100%;
+            color: #333; /* Dark text color for contrast */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: fadeIn 1s ease-out;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            width: 40%;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #333; /* Dark text for the header */
+            margin: 0;
+        }
+
+        /* Options Styles */
+        .options {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            text-align: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .nav-links a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            background: #00c6ff; /* Bright button color */
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: #008cff; /* Button hover effect with a darker shade */
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Button effect */
+        .btn-custom {
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #00c6ff; /* Blue button */
+            border-radius: 50px;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #008cff;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 30px;
+                text-align: center;
+            }
+
+            .header, .options {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .nav-links {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Fake Job Detection</h1>
+        </div>
+        <div class="options">
+            <p>Select an option below:</p>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('upload_pdf') }}" class="btn-custom">Upload PDF</a></li>
+                <li><a href="{{ url_for('enter_description') }}" class="btn-custom">Enter Job Description</a></li>
+                <li><a href="{{ url_for('enter_link') }}" class="btn-custom">Enter Job Link</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

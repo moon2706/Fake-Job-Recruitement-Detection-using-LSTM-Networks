@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Job Description</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        /* Container Styles */
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 600;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Custom Textarea Styling */
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            resize: none;
+            background-color: #f9f9f9;
+        }
+
+        textarea:focus {
+            border-color: #6c63ff;
+            box-shadow: 0 0 10px rgba(108, 99, 255, 0.3);
+            outline: none;
+        }
+
+        /* Button Styles */
+        button {
+            background: linear-gradient(135deg, #6d5dfc, #3fa2fa);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(63, 162, 250, 0.4);
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #3fa2fa, #6d5dfc);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(63, 162, 250, 0.6);
+        }
+
+        /* Adding subtle animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animated decorative elements */
+        .decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Small floating dots for extra decoration */
+        .small-dot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(63, 162, 250, 0.15);
+            border-radius: 50%;
+            bottom: -20px;
+            left: -20px;
+            animation: float 5s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Enter Job Description</h1>
+        <form action="{{ url_for('enter_description') }}" method="post">
+            <textarea name="description" rows="5" placeholder="Enter job description here..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="decoration"></div>
+        <div class="small-dot"></div>
+    </div>
+
+</body>
+</html>
